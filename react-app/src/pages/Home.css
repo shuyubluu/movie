@@ -25,38 +25,18 @@ body {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   color: var(--color-text);
   background-color: var(--color-background-900);
-  padding-top: 7.2rem; /* 添加與導航欄相同高度的 padding-top */
+  padding-top: 4rem; /* 添加與導航欄相同高度的 padding-top */
   margin: 0;
 }
 
 .trailer {
   width: 100%;
-  height: calc(100vh - 7.2rem);
+  height: calc(100vh - 4rem);
 }
 
 #player {
   width: 100%;
-  height: calc(100vh - 7.2rem);
-}
-
-.button-container {
-  text-align: center;
-  margin-top: 20px;
-}
-
-button {
-  padding: 10px 20px;
-  margin: 0 10px;
-  cursor: pointer;
-  border: none;
-  border-radius: 5px;
-  background-color: var(--color-background-100);
-  color: var(--color-text-dark);
-}
-
-button.active {
-  background-color: var(--color-primary);
-  color: #fff;
+  height: calc(100vh - 4rem);
 }
 
 .movie-images-container {

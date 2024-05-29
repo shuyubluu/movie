@@ -1,0 +1,20 @@
+/* Button.css */
+
+.button-container {
+  text-align: center;
+  margin-top: 20px;
+}
+button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px; /* 設定按鈕的圓角為 5px */
+  background-color: var(--color-background-100);
+  color: var(--color-text-dark);
+}
+
+button.active {
+  background-color: var(--color-primary);
+  color: #fff;
+}

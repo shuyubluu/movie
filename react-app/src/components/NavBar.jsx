@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
 import logo from "../assets/logo.svg";
@@ -6,6 +7,7 @@ function NavBar() {
   return (
     <nav className="nav-bar">
       <Logo />
+      <Search />
       <NavLinks />
     </nav>
   );
@@ -16,6 +18,18 @@ function Logo() {
     <Link to="/" className="logo">
       <img src={logo} alt="TAISHOW Logo" />
     </Link>
+  );
+}
+function Search() {
+  const [query, setQuery] = useState("");
+  return (
+    <input
+      className="search"
+      type="text"
+      placeholder="Search movies..."
+      value={query}
+      onChange={(e) => setQuery(e.target.value)}
+    />
   );
 }
 

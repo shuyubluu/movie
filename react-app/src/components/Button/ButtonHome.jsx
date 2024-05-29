@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import "./ButtonHome.css";
 
 function Button({ onClick, active, label }) {
   return (
