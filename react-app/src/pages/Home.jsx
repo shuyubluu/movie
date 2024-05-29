@@ -2,6 +2,8 @@ import { useState } from "react";
 import VideoPlayer from "../components/VideoPlayer";
 import ButtonHome from "../components/Button/ButtonHome";
 import MovieList from "../components/MovieList";
+import "./Home.css";
+
 
 const Home = () => {
   const nowPlayingData = [
