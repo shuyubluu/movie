@@ -1,0 +1,66 @@
+.footer {
+  background-color: var(--color-background-500);
+  color: #dee2e6;
+  padding: 40px 0;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: flex-start; /* 將 justify-content 修改為 flex-start */
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 40px 60px 0;
+}
+
+.footer-links {
+  flex: 0 1 auto; /* 修改這裡的 flex 屬性 */
+  text-align: left;
+  margin-right: 100px; /* 增加右側間距 */
+}
+
+.footer-links:last-child {
+  margin-right: 0; /* 最後一個 .footer-links 不需間距 */
+}
+
+.footer-links h3 {
+  margin-bottom: 55px;
+  font-size: 1.6rem;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin: 10px 0;
+}
+
+.footer-links ul li a {
+  color: #dee2e6;
+  text-decoration: none;
+}
+
+.footer-links ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer-brand .footer-logo {
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+.footer-description {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.social-icons a img {
+  width: 24px;
+  height: 24px;
+}

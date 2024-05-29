@@ -1,0 +1,90 @@
+.nav-bar {
+  position: fixed; /* 將導航欄固定在畫面上方 */
+  top: 0; /* 將導航欄置於畫面的頂部 */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 7.2rem;
+  padding: 0 2.4rem;
+  background-color: var(--color-background-500);
+  border-radius: 0.9rem;
+  width: 100%; /* 使導航欄擴展至整個畫面寬度 */
+  z-index: 1000; /* 確保導航欄處於其他內容的上方 */
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-right: auto;
+}
+
+.logo img {
+  height: 100%; /* 保持圖片高度適應 NavBar */
+  max-height: 7.2rem; /* 確保圖片不超出 NavBar 高度 */
+  object-fit: contain; /* 確保圖片內容適應圖片框 */
+}
+
+.logo span {
+  font-size: 3.2rem;
+}
+
+.logo h1 {
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.nav-options {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-options li {
+  list-style: none;
+  font-size: 1.6rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.nav-options li:hover {
+  text-decoration: underline;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 7.2rem;
+  padding: 0 2.4rem;
+  color: white;
+  text-decoration: none;
+  background-color: var(--color-background-500);
+  border-radius: 0.9rem;
+  transition: border-color 0.3s;
+  margin-right: 2rem;
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: transparent;
+  transition: background-color 0.3s;
+}
+
+.nav-link:hover {
+  text-decoration: none;
+}
+
+.nav-link:hover::after {
+  background-color: #57658a;
+}
+
+.nav-options li:hover {
+  text-decoration: none;
+}

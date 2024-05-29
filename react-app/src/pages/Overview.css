@@ -1,0 +1,42 @@
+.movie-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px; /* 調整上邊距為較大的值 */
+}
+
+.movie-container {
+  position: relative;
+  width: 200px;
+  margin: 0 10px;
+}
+
+.movie-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.movie-image-container:hover {
+  transform: scale(1.1);
+}
+
+.movie-data-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 0 0 10px 10px;
+}
+
+.movie-title {
+  margin: 0;
+  padding: 10px;
+  color: #ffffff;
+  font-size: 16px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translateY(100%);
+}
