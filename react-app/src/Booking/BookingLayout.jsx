@@ -6,6 +6,7 @@ import SelectShow from "./SelectShow";
 import FormAttribute from "./FormAttribute";
 import React, { useState } from "react";
 import { Container } from "react-bootstrap";
+import "./booking.css";
 
 const BookingLayout = () => {
   const cities = [
@@ -56,7 +57,7 @@ const BookingLayout = () => {
   }
 
   return (
-    <Container>
+    <Container className="booking-container">
       <Geolocation />
       <SelectCity cities={cities} />
       <SelectTheater theaters={theaters} />

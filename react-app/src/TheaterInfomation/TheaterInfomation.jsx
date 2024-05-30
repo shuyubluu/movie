@@ -81,7 +81,7 @@ const TheaterInfomation = () => {
   };
 
   return (
-    <Container>
+    <Container className="theat-container">
       <h2 className="title text-center my-4">影城資訊</h2>
       <Row>
         {theaterInfomations.map((theaterInfomation, index) => (

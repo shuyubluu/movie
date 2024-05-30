@@ -1,7 +1,7 @@
 import { useState } from "react";
+import { Box, Flex, Grid, Text } from "@chakra-ui/react";
 import MovieData from "../components/MovieData";
 import ButtonHome from "../components/Button/ButtonHome";
-import "./Overview.css";
 
 const Overview = () => {
   const nowPlayingData = [
@@ -35,15 +35,16 @@ const Overview = () => {
 
   const movieData = showNowPlaying ? nowPlayingData : comingSoonData;
 
-  // 將 movieData 分割成多個片段，每個片段包含 6 部電影
+  // 将 movieData 分割成多个片段，每个片段包含 6 部电影
   const dividedMovieData = [];
   for (let i = 0; i < movieData.length; i += 6) {
     dividedMovieData.push(movieData.slice(i, i + 6));
   }
 
   return (
-    <>
-      <div className="button-container">
+    <Box mt="100px" p="4">
+      {/* 确保内容不被导航栏遮挡 */}
+      <Flex justifyContent="center" mb="12">
         <ButtonHome
           onClick={() => setShowNowPlaying(true)}
           active={showNowPlaying}
@@ -54,23 +55,32 @@ const Overview = () => {
           active={!showNowPlaying}
           label="即將上映"
         />
-      </div>
-      <div className="overview-content">
+      </Flex>
+      <Box mt="12">
         {dividedMovieData.map((row, rowIndex) => (
-          <div key={rowIndex} className="movie-row">
+          <Grid
+            key={rowIndex}
+            templateColumns="repeat(6, 1fr)"
+            gap="6"
+            mb="12"
+            mt={rowIndex === 0 ? "12" : "0"}
+          >
             {row.map((movie, index) => (
-              <div key={index} className="movie-container">
+              <Flex key={index} direction="column" alignItems="center" mt="12">
                 <MovieData
                   src={movie.src}
                   alt={movie.alt}
                   title={movie.title}
                 />
-              </div>
+                <Text mt="8" textAlign="center">
+                  {movie.title}
+                </Text>
+              </Flex>
             ))}
-          </div>
+          </Grid>
         ))}
-      </div>
-    </>
+      </Box>
+    </Box>
   );
 };
 

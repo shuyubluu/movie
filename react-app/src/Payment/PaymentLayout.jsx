@@ -2,6 +2,7 @@ import MovieInfomation from "./MovieInfomation";
 import SelectTicket from "./SelectTicket";
 import Payment from "./Payment";
 import React from "react";
+import "./payment.css";
 
 const PaymentLayout = () => {
   const payments = ["Visa", "MasterCard", "JCB", "PayPal", "LinePay"];
@@ -25,12 +26,14 @@ const PaymentLayout = () => {
 
   return (
     <>
-      <MovieInfomation movieInfomation={movieInfomation} />
-      <SelectTicket
-        movieInfomation={movieInfomation}
-        ticketTypes={ticketTypes}
-      />
-      <Payment payments={payments} />
+      <div className="payment-container">
+        <MovieInfomation movieInfomation={movieInfomation} />
+        <SelectTicket
+          movieInfomation={movieInfomation}
+          ticketTypes={ticketTypes}
+        />
+        <Payment payments={payments} />
+      </div>
     </>
   );
 };

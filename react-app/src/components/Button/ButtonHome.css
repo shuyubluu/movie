@@ -4,17 +4,19 @@
   text-align: center;
   margin-top: 20px;
 }
+
 button {
   padding: 10px 20px;
   margin: 0 10px;
   cursor: pointer;
   border: none;
-  border-radius: 5px; /* 設定按鈕的圓角為 5px */
+  border-radius: 50px !important;
   background-color: var(--color-background-100);
   color: var(--color-text-dark);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 button.active {
-  background-color: var(--color-primary);
+  background-color: #2a2b2c;
   color: #fff;
 }

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import "./VideoPlayer.css";
 
 function VideoPlayer() {
   const [trailerData, setTrailerData] = useState({
@@ -12,6 +13,15 @@ function VideoPlayer() {
     tag.src = "https://www.youtube.com/iframe_api";
     const firstScriptTag = document.getElementsByTagName("script")[0];
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    // 获取 iframe 元素
+    const iframe = document.getElementById("player");
+    // 监听 iframe 的加载完成事件
+    iframe.onload = function () {
+      // 设置 iframe 的高度为其父容器的高度
+      iframe.style.height = iframe.parentNode.offsetHeight + "px";
+      // 设置 iframe 的宽度为其父容器的宽度
+      iframe.style.width = iframe.parentNode.offsetWidth + "px";
+    };
 
     window.onYouTubeIframeAPIReady = () => {
       setTrailerData((prevData) => ({
@@ -74,7 +84,7 @@ function VideoPlayer() {
   }
 
   return (
-    <div id="player-container">
+    <div id="player-container" style={{ width: "100%", height: "100%" }}>
       <div id="player"></div>
       <div id="button-container">
         <button id="prev-button" onClick={handlePreviousTrailer}>

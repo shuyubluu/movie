@@ -1,13 +1,31 @@
 import PropTypes from "prop-types";
+import { Box, Image, Text } from "@chakra-ui/react";
 
 function MovieData({ src, alt, title }) {
   return (
-    <div className="movie-container">
-      <div className="movie-image-container">
-        <img className="movie-image" src={src} alt={alt} />
-      </div>
-      <div className="movie-title">{title}</div>
-    </div>
+    <Box
+      className="movie-container"
+      width="200px"
+      height="300px"
+      overflow="hidden"
+      position="relative"
+      _hover={{
+        transform: "scale(1.05)",
+        transition: "transform 0.3s",
+      }}
+    >
+      <Image
+        className="movie-image"
+        src={src}
+        alt={alt}
+        width="100%"
+        height="100%"
+        objectFit="cover"
+      />
+      <Text className="movie-title" textAlign="center" mt="2">
+        {title}
+      </Text>
+    </Box>
   );
 }
 
