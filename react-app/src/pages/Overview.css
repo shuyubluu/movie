@@ -1,0 +1,26 @@
+/* Overview.css */
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.movie-container {
+  position: relative;
+  transition: transform 0.3s;
+}
+
+.movie-container:hover {
+  transform: scale(1.05);
+}
+
+.movie-image {
+  width: 100%;
+  height: auto;
+}
+
+.movie-title {
+  text-align: center;
+  margin-top: 0.5rem;
+}
