@@ -73,13 +73,13 @@ public class MovieController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
     }
-    @GetMapping("/{movieId}")
-    public ResponseEntity<Map<String, Object>> getMovieDetailsById(@PathVariable Integer movieId) {
+    @GetMapping("/details/{movieId}")
+    public ResponseEntity<Map<String, Object>> getMovieDetailsByMovieId(@PathVariable Integer movieId) {
         Optional<Movie> movieOptional = movieService.getMovieById(movieId);
         if (movieOptional.isPresent()) {
             Movie movie = movieOptional.get();
             Map<String, Object> movieData = new HashMap<>();
-            movieData.put("src", movie.getPoster()); // 假设 poster 存储的是 base64 字符串
+            movieData.put("src", movie.getPoster());
             movieData.put("alt", movie.getTitle());
             movieData.put("title", movie.getTitle());
             movieData.put("path", "/booking/" + movie.getId());
@@ -88,5 +88,7 @@ public class MovieController {
             return ResponseEntity.notFound().build();
         }
     }
+
+
 
 }
